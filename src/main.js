@@ -15,21 +15,20 @@ import evaluateUser from './tools/filterEngine/evaluateUser';
 let watchedUserflow = {};
 const userflowProxy = setFlowProxy(watchedUserflow, evaluateUser);
 
-const listenForGetUser = (request) => {
+const listenForUsers = (request) => {
     const { readyState, responseURL, responseText } = request;
     // SERVER_GET_USER — part of the URL of XHR request for user to render
     // Full URL example: https://badoo.com/mwebapi.phtml?SERVER_GET_USER
     if (readyState === 4 && responseURL.includes('SERVER_GET_USER') && !responseURL.includes('_LIST')) {
         const responseObj = JSON.parse(responseText);
         const user = responseObj.body["0"].user;
-        /* [OUTDATED?] Filter out your own profile */
+        // Filter out your own profile
         if (user && user.client_source === 0) {
-            return false;
+            return;
         }
         // Trigger proxy to start evaluating user
         userflowProxy.flow = user;
     }
-    return false; // return false to not block the request
 };
 
 const triggerGetUser = () => {
@@ -43,7 +42,7 @@ const triggerGetUser = () => {
 
 const main = () => {
     console.log('Userscript started;')
-    watchXHR(listenForGetUser);
+    watchXHR(listenForUsers);
     observeDomChanges((observer) => {
         const pofilesReady = document.querySelector('button.csms-user-list-cell[data-qa-user-id]');
         if (pofilesReady) {
