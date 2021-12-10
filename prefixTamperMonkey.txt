@@ -1,0 +1,21 @@
+// ==UserScript==
+// @name         Badoo
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        *://*.badoo.com/*
+// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @grant        none
+// @require      file:///Volumes/Work/BadooAutoFilter/dist/badoo-auto-filter.userscript.js
+// ==/UserScript==
+
+// ==UserScript==
+// @name         Badoo
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  try to take over the world!
+// @author       You
+// @match        *://*/*
+// @require      file:///Volumes/Work/BadooAutoFilter/dist/badoo-auto-filter.userscript.js
+// ==/UserScript==
