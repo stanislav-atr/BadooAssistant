@@ -19,7 +19,7 @@ export default {
         }),
         // Don't include comments in bundle
         cleanup({
-            comments: 'none',
+            comments: 'eslint',
         }),
         // banner({
         //     file: path.join(__dirname, './prefixTamperMonkey.js'),
