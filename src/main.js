@@ -1,3 +1,4 @@
+import browser from './browser-api.js'
 import watchXHR from './tools/watchXHR';
 import {
     userflowProxyEval,
@@ -6,10 +7,12 @@ import {
 
 /** TODO
  * Main *
- * close last profile's modal window
- * fix about_me:include&exclude
+ * Implement autoscrolling + config value for it (keep scrolling until...)
+ * captcha is a bitch, sometimes app crashes clearing console
  * Rework script initialization
  * Misc *
+ * Dont include comments in bundle
+ * for prod include tampermonkey prefix into build
  * jsdoc all major functions
  * npmjs.com/package/bottleneck
  * Organize error throwing instead of silent and empty returns
@@ -41,12 +44,13 @@ const manageRequests = (request) => {
 
     if (responseURL.includes('SERVER_GET_USER_LIST')) {
         userflowProxyClick.flow = getUserList(responseObj);
+        return;
     }
 
     if (responseURL.includes('SERVER_GET_USER') && !responseURL.includes('_LIST')) {
         const user = responseObj.body[0].user;
         // Filter out your own profile
-        if (user.client_source === 0) {
+        if (user.client_source && user.client_source === 0) {
             return;
         }
         userflowProxyEval.flow = user;
@@ -54,8 +58,15 @@ const manageRequests = (request) => {
 };
 
 const main = () => {
-    console.log('Userscript started;')
+    console.log('Userscript started!')
     watchXHR(manageRequests);
+    // setInterval(() => {
+    //     const closeButton = browser.querySelector('.csms-modal > button[class*="--dark"]');
+    //     if (closeButton) {
+    //         console.log('HERE!!!!!!!!!');
+    //         closeButton.click();
+    //     }
+    // }, 300);
 };
 
 export default main;

@@ -2,7 +2,7 @@
  * Implement config by voting status
  */
 const apiConfig = {
-    // age: 24,         // Maximum age for user to pass, inclusive
+    age: 25,         // Maximum age for user to pass, inclusive
     height: 167,     // Maximum height in cm for user to pass, inclusive
     about_me: {      // Pass profile if "About me" field is present. Filter profiles by keywords with include & exclude like ['keyword1', 'keyword2'].
         include: [],    // Both are case-insensitive

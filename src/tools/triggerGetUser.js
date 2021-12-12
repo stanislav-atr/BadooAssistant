@@ -5,31 +5,23 @@ const clicker = (userThumbnail) => {
     userThumbnail.click();
 };
 
-const feedClicker = (tokenArray) => {
-    for (const token of tokenArray) {
+const feedClicker = (tokensArray) => {
+    for (const [i, token] of tokensArray.entries()) {
         const selector = `[data-qa-user-id="${token}"]`
         const userThumbnail = browser.querySelector(selector);
         clicker(userThumbnail);
     }
 };
 
-const triggerGetUser = (tokenArray) => {
+const triggerGetUser = (tokensArray) => {
+    // Wait for first profile render to be able to click
     observeDomChanges((observer) => {
         const profilesReady = document.querySelector('button.csms-user-list-cell[data-qa-user-id]');
         if (profilesReady) {
-            feedClicker(tokenArray);
+            feedClicker(tokensArray);
             observer.disconnect();
         }
     });
-
-    // Close last modal to be able to scroll the page
-    const closeButton = browser.querySelector('.csms-modal > button[class*="--dark"]')
-    if (closeButton) {
-        closeButton.click();
-    }
-    // setTimeout(() => {
-    //     closeButton.click();
-    // }, 50)
 };
 
 export default triggerGetUser;
