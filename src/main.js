@@ -6,7 +6,8 @@ import {
 
 /** TODO
  * Main *
- * test about_me:include&exclude
+ * close last profile's modal window
+ * fix about_me:include&exclude
  * Rework script initialization
  * Misc *
  * jsdoc all major functions

@@ -57,7 +57,7 @@ function formatAboutMe(configValue, user) {
             }
         }
     }
-    return;
+    return profileAboutMe.replace(/\n/g, '');
 }
 
 function formatHeight(user) {

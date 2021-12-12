@@ -29,9 +29,9 @@ const evaluateUser = (user) => {
         }
     }
 
-    // console.log(formattedUser);
-    console.log(user.profile_fields[1].display_value)
+    // console.log(user.profile_fields[1].display_value)
     console.log(`https://badoo.com/people-nearby/${user.user_id}`);
+    console.log(formattedUser);
     // console.log(user);
 };
 

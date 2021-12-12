@@ -14,8 +14,6 @@ const feedClicker = (tokenArray) => {
 };
 
 const triggerGetUser = (tokenArray) => {
-    //console.log(`Clicker got ${tokenArray.length} tokens`);
-    //console.log(tokenArray);
     observeDomChanges((observer) => {
         const profilesReady = document.querySelector('button.csms-user-list-cell[data-qa-user-id]');
         if (profilesReady) {
