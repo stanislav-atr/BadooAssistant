@@ -19,6 +19,8 @@ const formatUser = (key, value, user, formattedUser) => {
     case 'relationship':
         formattedUser.relationship = formatRelationship(user);
         break;
+    default:
+        break;
     }
 };
 
@@ -69,7 +71,9 @@ function formatHeight(user) {
             rawAppearance = field.display_value;
         }
     }
-    // Format display_value into height number; height numbers are the first three characters of rawApearance string; returns NaN if height is not specified
+    // Format display_value into height number;
+    // Height numbers are the first three characters of rawApearance string;
+    // Returns NaN if height is not specified
     const height = parseInt(rawAppearance.substring(0, 3), 10);
 
     return height;
@@ -94,9 +98,9 @@ function formatPhotoCount(user) {
 }
 
 function formatRelationship(user) {
-    // 10003 - Here to date, 10005 - Ready for a relationship, 10002 - Open to chat, 10006 - to see what happens
+    // 10005 - Ready for a relationship
     const tiw = user.tiw_idea.tiw_phrase_id;
-    if (tiw & tiw === 10005) {
+    if (tiw && tiw === 10005) {
         return true;
     }
     return false;

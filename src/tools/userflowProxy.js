@@ -10,8 +10,8 @@ import triggerGetUser from './triggerGetUser';
  */
 const setFlowProxy = (userflow, callback) => {
     const proxy = new Proxy(userflow, {
-        set(target, property, value, receiver) {
-            // Do not save anything into proxied variable and immediately pass data to processing function.
+        set(target, property, value) {
+            // Do not set anything, immediately pass data to processing function.
             callback(value);
             return true;
         },

@@ -1,4 +1,4 @@
-const win = (typeof unsafeWindow !== 'undefined') ? unsafeWindow : window;
+const win = (typeof unsafeWindow !== 'undefined') ? unsafeWindow : window; /* eslint-disable-line */
 
 const browser = {
     window: win,

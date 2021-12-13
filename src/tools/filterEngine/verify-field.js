@@ -31,8 +31,9 @@ const verifyField = (field, configValue, formattedUser) => {
             return false;
         }
         break;
+    default:
+        break;
     }
-    // Return true, if no field was not rejected
     return true;
 };
 

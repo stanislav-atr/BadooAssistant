@@ -1,4 +1,4 @@
-import browser from '../browser-api.js';
+import browser from '../browser-api';
 import observeDomChanges from './observeDomChanges';
 
 const clicker = (userThumbnail) => {
@@ -6,7 +6,7 @@ const clicker = (userThumbnail) => {
 };
 
 const feedClicker = (tokensArray) => {
-    for (const [i, token] of tokensArray.entries()) {
+    for (const token of tokensArray) {
         const selector = `[data-qa-user-id="${token}"]`;
         const userThumbnail = browser.querySelector(selector);
         clicker(userThumbnail);

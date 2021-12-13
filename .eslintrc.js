@@ -7,6 +7,8 @@ module.exports = {
     'airbnb-base',
   ],
   rules: {
+    "no-use-before-define": "off",
+    "no-restricted-syntax": "off",
     "func-names": "off",
     "indent": ["error", 4],
     "no-param-reassign": "off",

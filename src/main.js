@@ -1,4 +1,3 @@
-import browser from './browser-api.js';
 import watchXHR from './tools/watchXHR';
 import {
     userflowProxyEval,
@@ -22,7 +21,7 @@ const getUserList = (responseObj) => {
 
     const sections = responseObj.body['0'].client_user_list.section;
     if (!sections) {
-        throw 'There is no section!';
+        throw new Error('There is no section!');
     }
     for (const section of sections) {
         const { users } = section;
@@ -57,7 +56,7 @@ const manageRequests = (request) => {
 };
 
 const main = () => {
-    console.log('Userscript started!');
+    console.log('Userscript started!'); /* eslint-disable-line */
     watchXHR(manageRequests);
     // setInterval(() => {
     //     const closeButton = browser.querySelector('.csms-modal > button[class*="--dark"]');

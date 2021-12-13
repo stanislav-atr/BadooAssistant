@@ -1,5 +1,6 @@
-import apiConfig from '../../../user-api.config.js';
-import formatUser from './format-user.js';
+/* eslint-disable no-console */
+import apiConfig from '../../../user-api.config';
+import formatUser from './format-user';
 import verifyField from './verify-field';
 
 /** TODO
@@ -16,14 +17,13 @@ const evaluateUser = (user) => {
     const formattedUser = {
         // id: user.user_id,
     };
-    // Loop through config and format corresponding profile's key:value pairs to match those of config
+    // Loop through config and format profile's key:value pairs to match those of config
     for (const [key, value] of Object.entries(apiConfig)) {
         formatUser(key, value, user, formattedUser);
     }
 
     for (const [key, value] of Object.entries(apiConfig)) {
-        let accepted;
-        accepted = verifyField(key, value, formattedUser);
+        const accepted = verifyField(key, value, formattedUser);
         if (!accepted) {
             return;
         }
