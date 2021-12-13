@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "rollup -c",
-    "watch": "rollup -c --watch"
+    "watch": "rollup -c --watch",
+    "lint": "eslint ./src"
   },
   "author": "",
   "license": "ISC",
