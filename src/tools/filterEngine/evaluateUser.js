@@ -13,7 +13,7 @@ import verifyField from './verify-field';
  * @param {array} passedUsers - array to store users that passed the evaluation.
  */
 const evaluateUser = (user) => {
-    let formattedUser = {
+    const formattedUser = {
         // id: user.user_id,
     };
     // Loop through config and format corresponding profile's key:value pairs to match those of config
@@ -29,9 +29,9 @@ const evaluateUser = (user) => {
         }
     }
 
-    console.log(user.profile_fields[1].display_value)
+    console.log(user.profile_fields[1].display_value);
     console.log(`https://badoo.com/people-nearby/${user.user_id}`);
-    //console.log(formattedUser);
+    // console.log(formattedUser);
     // console.log(user);
 };
 

@@ -1,24 +1,24 @@
 const formatUser = (key, value, user, formattedUser) => {
     switch (key) {
-        // Formatted user's keys should match corresponding config keys
-        case 'age':
-            formattedUser.age = user.age;
-            break;
-        case 'height':
-            formattedUser.height = formatHeight(user);
-            break;
-        case 'about_me':
-            formattedUser.about_me = formatAboutMe(value, user);
-            break;
-        case 'online':
-            formattedUser.online = formatOnlineStatus(user);
-            break;
-        case 'photos':
-            formattedUser.photos = formatPhotoCount(user);
-            break;
-        case 'relationship':
-            formattedUser.relationship = formatRelationship(user);
-            break;
+    // Formatted user's keys should match corresponding config keys
+    case 'age':
+        formattedUser.age = user.age;
+        break;
+    case 'height':
+        formattedUser.height = formatHeight(user);
+        break;
+    case 'about_me':
+        formattedUser.about_me = formatAboutMe(value, user);
+        break;
+    case 'online':
+        formattedUser.online = formatOnlineStatus(user);
+        break;
+    case 'photos':
+        formattedUser.photos = formatPhotoCount(user);
+        break;
+    case 'relationship':
+        formattedUser.relationship = formatRelationship(user);
+        break;
     }
 };
 
@@ -31,7 +31,7 @@ function formatAboutMe(configValue, user) {
         if (field.id && field.id === 'aboutme_text') {
             if (field.display_value === '') {
                 return '';
-            };
+            }
             profileAboutMe = field.display_value.toLowerCase();
         }
     }
@@ -78,13 +78,12 @@ function formatHeight(user) {
 function formatOnlineStatus(user) {
     if (user.online_status === 1) {
         return true;
-    } else {
-        return false;
     }
+    return false;
 }
 
 function formatPhotoCount(user) {
-    const albums = user.albums;
+    const { albums } = user;
     for (const album of albums) {
         // Get native photos count
         if (album.album_type && album.album_type === 2) {
@@ -96,7 +95,7 @@ function formatPhotoCount(user) {
 
 function formatRelationship(user) {
     // 10003 - Here to date, 10005 - Ready for a relationship, 10002 - Open to chat, 10006 - to see what happens
-    const tiw = user.tiw_idea.tiw_phrase_id
+    const tiw = user.tiw_idea.tiw_phrase_id;
     if (tiw & tiw === 10005) {
         return true;
     }
