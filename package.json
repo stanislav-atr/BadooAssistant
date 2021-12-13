@@ -4,14 +4,15 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "rollup -c",
-    "watch": "rollup -c --watch",
-    "vis": "rollup-plugin-visualizer"
+    "watch": "rollup -c --watch"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.4.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
     "rollup": "^2.60.1",
     "rollup-plugin-banner": "^0.2.1",
     "rollup-plugin-cleanup": "^3.2.1",

@@ -11,7 +11,6 @@ import {
  * captcha is a bitch, sometimes app crashes clearing console
  * Rework script initialization
  * Misc *
- * Dont include comments in bundle
  * for prod include tampermonkey prefix into build
  * jsdoc all major functions
  * npmjs.com/package/bottleneck
