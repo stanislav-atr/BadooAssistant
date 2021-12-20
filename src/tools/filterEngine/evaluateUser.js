@@ -3,15 +3,9 @@ import apiConfig from '../../../user-api.config';
 import formatUser from './format-user';
 import verifyField from './verify-field';
 
-/** TODO
- * Main *
- * Misc *
- */
-
 /**
- * Proxy watchedUserflow object that indicates new profile and calls processing function on it.
+ * 
  * @param {object} user - profile object containing all the users' data.
- * @param {array} passedUsers - array to store users that passed the evaluation.
  */
 const evaluateUser = (user) => {
     const formattedUser = {
@@ -29,10 +23,11 @@ const evaluateUser = (user) => {
         }
     }
 
+    // console.img('https://itmediagroup.se/wp-content/uploads/2019/04/IMGSML.png');
     console.log(user.profile_fields[1].display_value);
     console.log(`https://badoo.com/people-nearby/${user.user_id}`);
     // console.log(formattedUser);
-    // console.log(user);
+    console.log(user);
 };
 
 export default evaluateUser;

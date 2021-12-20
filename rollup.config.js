@@ -7,7 +7,7 @@ export default {
     input: './index.js',
     output: {
         file: './dist/badoo-auto-filter.userscript.js',
-        format: 'cjs'
+        format: 'cjs',
     },
     plugins: [
         // Clean dist directory before bundling

@@ -1,3 +1,4 @@
+import { initConsoleLogImg } from 'console-log-img';
 import browser from './src/browser-api';
 import main from './src/main';
 
@@ -6,4 +7,8 @@ browser.window.re = () => {
     browser.location.href = '/people-nearby';
 };
 
-main();
+initConsoleLogImg({
+    printDimensions: true,
+});
+
+main()
