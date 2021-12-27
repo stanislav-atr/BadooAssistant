@@ -1,7 +1,8 @@
 /* eslint-disable no-console */
-import apiConfig from '../../../user-api.config';
+import filteringConfig from '../../../filter.config';
 import formatUser from './format-user';
 import verifyField from './verify-field';
+import renderProfile from '../renderProfile';
 
 /**
  * 
@@ -9,25 +10,27 @@ import verifyField from './verify-field';
  */
 const evaluateUser = (user) => {
     const formattedUser = {
-        // id: user.user_id,
+        profile_url: `https://badoo.com/people-nearby/${user.user_id}`,
+        avatar_url: 'https:' + user.albums[0].photos[0].large_url,
+        photo_urls: [],
     };
     // Loop through config and format profile's key:value pairs to match those of config
-    for (const [key, value] of Object.entries(apiConfig)) {
+    for (const [key, value] of Object.entries(filteringConfig)) {
         formatUser(key, value, user, formattedUser);
     }
 
-    for (const [key, value] of Object.entries(apiConfig)) {
+    for (const [key, value] of Object.entries(filteringConfig)) {
         const accepted = verifyField(key, value, formattedUser);
         if (!accepted) {
             return;
         }
     }
 
-    // console.img('https://itmediagroup.se/wp-content/uploads/2019/04/IMGSML.png');
-    console.log(user.profile_fields[1].display_value);
-    console.log(`https://badoo.com/people-nearby/${user.user_id}`);
+    renderProfile(formattedUser);
+    // console.log(user.profile_fields[1].display_value);
+    // console.log(`https://badoo.com/people-nearby/${user.user_id}`);
     // console.log(formattedUser);
-    console.log(user);
+    // console.log(user);
 };
 
 export default evaluateUser;
