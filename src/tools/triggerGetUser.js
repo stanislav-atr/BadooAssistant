@@ -6,10 +6,13 @@ const clicker = (userThumbnail) => {
 };
 
 const feedClicker = (tokensArray) => {
-    for (const token of tokensArray) {
+    for (const [index, token] of tokensArray.entries()) {
         const selector = `[data-qa-user-id="${token}"]`;
         const userThumbnail = browser.querySelector(selector);
-        clicker(userThumbnail);
+        // Progressive timeout to sync clicker with profiles rendering and slow down vs captcha
+        setTimeout(() => {
+            clicker(userThumbnail);
+        }, 750 * index / 2);
     }
 };
 
