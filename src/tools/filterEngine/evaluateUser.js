@@ -28,7 +28,7 @@ const evaluateUser = (user) => {
     }
 
     renderProfile(formattedUser);
-    //console.log(user);
+    // console.log(user.my_vote);
 };
 
 export default evaluateUser;

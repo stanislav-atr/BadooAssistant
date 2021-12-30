@@ -1,9 +1,8 @@
 /** TODO
  * Main *
- * !!! Implement filter config by voting status
  * Fix own profile fitlering
  * Exception for no about_me text in renderProfile.js
- * Normalize photos of big sizes
+ * !!! Normalize photos of big sizes
  * captcha is a bitch, and sometimes app crashes and clears console
  * Misc *
  * for prod include tampermonkey meta file into build

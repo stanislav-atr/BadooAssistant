@@ -44,7 +44,6 @@ const manageRequests = (request) => {
 };
 
 const main = () => {
-    console.log('Userscript started!'); /* eslint-disable-line */
     watchXHR(manageRequests);
     // setInterval(() => {
     //     const closeButton = browser.querySelector('.csms-modal > button[class*="--dark"]');
