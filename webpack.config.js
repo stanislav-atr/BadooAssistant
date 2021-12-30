@@ -8,8 +8,8 @@ module.exports = {
     clean: true,
   },
   mode: 'development',
-  watch: true,
-  watchOptions: {
-      ignored: '**/node_modules',
-  },
+//   watch: true,
+//   watchOptions: {
+//       ignored: '**/node_modules',
+//   },
 };

@@ -4,15 +4,13 @@
   "description": "",
   "private": true,
   "scripts": {
+    "watch": "webpack --config webpack.config.js --watch",
     "webp": "webpack --config webpack.config.js",
-    "watch": "rollup -c --watch",
     "lint": "eslint ./src"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^21.0.1",
-    "@rollup/plugin-node-resolve": "^13.1.1",
     "eslint": "^8.4.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3",
