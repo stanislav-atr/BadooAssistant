@@ -1,10 +1,7 @@
 /** TODO
  * Main *
- * Like button in console
- * Console multiple images for single profile
- * Implement filter config by voting status
- * Implement scroll assistant + config value for it (keep scrolling until...)
- * captcha is a bitch, sometimes app crashes clearing console
+ * !!!Implement filter config by voting status
+ * captcha is a bitch, sometimes app crashes and clears console
  * Misc *
  * for prod include tampermonkey meta file into build
  * jsdoc all major functions

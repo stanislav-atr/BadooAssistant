@@ -12,7 +12,7 @@ const feedClicker = (tokensArray) => {
         // Progressive timeout to sync clicker with profiles rendering and slow down vs captcha
         setTimeout(() => {
             clicker(userThumbnail);
-        }, 750 * index / 2);
+        }, (1500 * index) / 2);
     }
 };
 
