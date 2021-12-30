@@ -16,6 +16,11 @@ const verifyField = (field, configValue, formattedUser) => {
             return false;
         }
         break;
+    case 'can_vote':
+        if (!formattedUser.can_vote) {
+            return false;
+        }
+        break;
     case 'online':
         if (!formattedUser.online) {
             return false;

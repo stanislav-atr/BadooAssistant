@@ -17,7 +17,7 @@ const evaluateUser = (user) => {
     };
     // Loop through config and format profile's key:value pairs to match those of config
     for (const [key, value] of Object.entries(filteringConfig)) {
-        formatUser(key, value, user, formattedUser);
+        formatUser(key, value, formattedUser, user);
     }
 
     for (const [key, value] of Object.entries(filteringConfig)) {
@@ -28,6 +28,7 @@ const evaluateUser = (user) => {
     }
 
     renderProfile(formattedUser);
+    //console.log(user);
 };
 
 export default evaluateUser;

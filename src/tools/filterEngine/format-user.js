@@ -1,4 +1,4 @@
-const formatUser = (key, value, user, formattedUser) => {
+const formatUser = (key, value, formattedUser, user) => {
     switch (key) {
     // Formatted user's keys should match corresponding config keys
     case 'age':
@@ -9,6 +9,9 @@ const formatUser = (key, value, user, formattedUser) => {
         break;
     case 'about_me':
         formattedUser.about_me = formatAboutMe(value, user);
+        break;
+    case 'can_vote':
+        formattedUser.can_vote = user.my_vote === 2 ? false : true;
         break;
     case 'online':
         formattedUser.online = formatOnlineStatus(user);
