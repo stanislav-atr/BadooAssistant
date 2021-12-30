@@ -1,10 +1,19 @@
 /* eslint-disable no-mixed-operators, no-console, no-eval */
+const normalizePhoto = (height, width) => {
+    const desiredWidth = 360;
+    const factor = width / desiredWidth;
+    return [height / factor, width / factor];
+};
+
 const makeImageStyles = (photoUrls, initImage) => {
-    const img = initImage;
     const scale = 0.2;
+    // Normalize photos to 360px width
+    let { height, width } = initImage;
+    [height, width] = normalizePhoto(height, width);
+
     const imageStyles = photoUrls.map((url) => {
         // eslint-disable-next-line max-len
-        return `background: url(${url}); font-size: ${img.height * scale}px; padding: ${Math.floor(img.height * scale / 4)}px ${Math.floor(img.width * scale / 2)}px; background-size: ${img.width * scale}px ${img.height * scale}px; display: block !important; margin: 10px 0; background-repeat: no-repeat; background-position: center; background-size: contain;`;
+        return `background: url(${url}); font-size: ${height * scale}px; padding: ${Math.floor(height * scale / 4)}px ${Math.floor(width * scale / 2)}px; background-size: ${width * scale}px ${height * scale}px; display: block !important; margin: 10px 0; background-repeat: no-repeat; background-position: center; background-size: contain;`;
     });
     return imageStyles;
 };
