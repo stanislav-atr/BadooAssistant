@@ -36,7 +36,7 @@ const manageRequests = (request) => {
     if (responseURL.includes('SERVER_GET_USER') && !responseURL.includes('_LIST')) {
         const { user } = responseObj.body[0];
         // Filter out your own profile
-        if (user.client_source && user.client_source === 0) {
+        if (user && user.client_source === 0) {
             return;
         }
         userflowProxyEval.flow = user;
@@ -45,13 +45,6 @@ const manageRequests = (request) => {
 
 const main = () => {
     watchXHR(manageRequests);
-    // setInterval(() => {
-    //     const closeButton = browser.querySelector('.csms-modal > button[class*="--dark"]');
-    //     if (closeButton) {
-    //         console.log('HERE!!!!!!!!!');
-    //         closeButton.click();
-    //     }
-    // }, 300);
 };
 
 export default main;
