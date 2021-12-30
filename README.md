@@ -1,5 +1,6 @@
 /** TODO
  * Main *
+ * Rename repo
  * Exception for no about_me text in renderProfile.js
  * captcha is a bitch, and sometimes app crashes and clears console
  * Misc *
