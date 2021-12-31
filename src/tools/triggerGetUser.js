@@ -1,4 +1,3 @@
-import browser from '../browser-api';
 import observeDomChanges from './observeDomChanges';
 
 const clicker = (userThumbnail) => {
@@ -8,7 +7,7 @@ const clicker = (userThumbnail) => {
 const feedClicker = (tokensArray) => {
     for (const [index, token] of tokensArray.entries()) {
         const selector = `[data-qa-user-id="${token}"]`;
-        const userThumbnail = browser.querySelector(selector);
+        const userThumbnail = document.querySelector(selector);
         // Progressive timeout to sync clicker with profiles rendering and slow down vs captcha
         setTimeout(() => {
             clicker(userThumbnail);
