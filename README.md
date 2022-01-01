@@ -22,8 +22,8 @@ These might be fixed in the future.
      
 ## How to use
 1. Head to the ```https://badoo.com/people-nearby``` section in ```Mobile View```.
-   ![image](https://user-images.githubusercontent.com/68852737/147835356-a7bae613-658e-4dec-9c5a-deada7fb0a2e.png)
-   <img src="https://user-images.githubusercontent.com/68852737/147836887-ab393479-ba18-41be-8f93-40ed47cf8a2f.png" width="40%" height="40%">
+   - ![image](https://user-images.githubusercontent.com/68852737/147835356-a7bae613-658e-4dec-9c5a-deada7fb0a2e.png)
+   - <img src="https://user-images.githubusercontent.com/68852737/147836887-ab393479-ba18-41be-8f93-40ed47cf8a2f.png" width="40%" height="40%">
 2. Reload the page and check userscript console output, which should be starting with ```Userscript started!```: 
    - When first batch of profiles is filtered, _scroll down to get another batch_.
    - Enter ```re()``` in console for an easier way to restart the script.
