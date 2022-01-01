@@ -11,9 +11,10 @@ These might be fixed in the future.
 
 ## How to install
 1. Clone the code: ```git clone https://github.com/stanislav-atr/BadooAssistant.git```
-2. Edit key values in ```filter.config.js``` to suit your needs or comment them out to ignore.**These should not conflict with website's native filter.**
-3. Build the userscript with ```yarn webp``` or ```npm run webp```. You may use ```yarn watch``` or ```npm run watch``` to auto-rebuild userscript to keep experimenting with filter options.
-4. Install [TamperMonkey](https://www.tampermonkey.net/) extension.
+2. ```npm install```
+3. Edit key values in ```filter.config.js``` to suit your needs or comment them out to ignore.**These should not conflict with website's native filter.**
+4. Build the userscript with ```yarn webp``` or ```npm run webp```. You may use ```yarn watch``` or ```npm run watch``` to auto-rebuild userscript to keep experimenting with filter options.
+5. Install [TamperMonkey](https://www.tampermonkey.net/) extension.
    - Create new script.
    - Get meta header from ```prefixTamperMonkey.js``` and add it to the script so it's contents look like this:
 ![tampermonkey contents](https://user-images.githubusercontent.com/68852737/147835026-fcc6ea74-93b3-4a44-a594-14d0fba0c757.png)
